@@ -42,3 +42,4 @@ type Auth {
 }
 `;
 
+module.exports = typeDefs;
