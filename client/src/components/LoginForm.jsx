@@ -1,52 +1,53 @@
-// see SignupForm.js for comments
-import { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { useState } from 'react'; // import the useState hook from React
+import { Form, Button, Alert } from 'react-bootstrap'; // import the Form, Button, and Alert components from React Bootstrap
 
-import { loginUser } from '../utils/API';
-import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client'; // import the useMutation hook from the Apollo Client
+import { LOGIN_USER } from '../utils/mutations'; // import the LOGIN_USER mutation from the mutations file in the utils folder
 
+import Auth from '../utils/auth'; // import the Auth module from the utils folder
+
+// create the LoginForm component to handle user logins
 const LoginForm = () => {
-  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
-  const [validated] = useState(false);
-  const [showAlert, setShowAlert] = useState(false);
+  const [userFormData, setUserFormData] = useState({ email: '', password: '' }); // set initial form state
+  const [validated] = useState(false); // set state for form validation
+  const [showAlert, setShowAlert] = useState(false); // set state for alert
+  const [loginUser, { error }] = useMutation(LOGIN_USER); // use mutation for logging in a user
 
+  // create method to handle user input changes and update the component state
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setUserFormData({ ...userFormData, [name]: value });
+    const { name, value } = event.target; // destructure the name and value properties from the event.target
+    setUserFormData({ ...userFormData, [name]: value }); // set the form state for the appropriate input field
   };
 
+  // create method to handle form submission and log the user in
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // prevent the default form action
+    const form = event.currentTarget; // check if form has everything (as per react-bootstrap docs)
 
-    // check if form has everything (as per react-bootstrap docs)
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+    if (form.checkValidity() === false) { // check if the form is valid
+      event.preventDefault(); // prevent the default form action
+      event.stopPropagation(); // stop the form propagation
     }
 
-    try {
-      const response = await loginUser(userFormData);
+    try { // try to execute the loginUser mutation
+      const { data } = await loginUser({ // destructure the data object from the loginUser mutation
+        variables: { ...userFormData }, // pass the userFormData object to the mutation as variables
+      });
 
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const { token, user } = await response.json();
-      console.log(user);
-      Auth.login(token);
-    } catch (err) {
-      console.error(err);
-      setShowAlert(true);
+      Auth.login(data.login.token); // log the user in by passing the token from the mutation to the Auth.login method
+    } catch (err) { // catch any errors and log them to the console
+      console.error(err); // log the error to the console
+      setShowAlert(true); // set the showAlert state to true
     }
 
-    setUserFormData({
-      username: '',
-      email: '',
-      password: '',
+    setUserFormData({ // reset the form state
+      username: '', // reset the username to an empty string
+      email: '', // reset the email to an empty string
+      password: '', // reset the password to an empty string
     });
   };
 
+  // return the JSX for the LoginForm component with a Form, Alert, Form.Group, Form.Label, Form.Control, and Button
   return (
     <>
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
