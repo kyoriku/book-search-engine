@@ -56,7 +56,7 @@ To get started with the Book Search Engine, follow these steps:
 ![home](screenshots/screenshot-1-homepage.jpg)
 ![signup](screenshots/screenshot-2-sign-up.jpg)
 ![login](screenshots/screenshot-3-login.jpg)
-![search](screenshots/screenshot-4.jpg-search-book.jpg)
+![search](screenshots/screenshot-4-search-book.jpg)
 ![save](screenshots/screenshot-5-save-book.jpg)
 ![saved](screenshots/screenshot-6-saved-books.jpg)
 ![remove](screenshots/screenshot-7-remove-book.jpg)
