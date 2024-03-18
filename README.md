@@ -6,6 +6,8 @@
 [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
 [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://react.dev/)
 [![Node.JS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/en)
+[![GraphQL](https://img.shields.io/badge/GraphQL-E10098.svg?style=for-the-badge&logo=GraphQL&logoColor=white)](https://graphql.org/)
+[![Apollo GraphQL](https://img.shields.io/badge/Apollo%20GraphQL-311C87.svg?style=for-the-badge&logo=Apollo-GraphQL&logoColor=white)](https://www.apollographql.com/)
 
 ## Description
 The Book Search Engine is a web application built with the MERN stack (MongoDB, Express.js, React, Node.js) that allows users to search for books using the Google Books API. Users can create accounts, log in, search for books, save them to their account, and remove books from their saved list.
@@ -49,6 +51,15 @@ To get started with the Book Search Engine, follow these steps:
   npm run build
   ```
   This command will create a production-ready build of the Book Search Engine, optimized for performance and ready to be deployed to your hosting provider.
+
+### Screenshots
+![home](screenshots/screenshot-1-homepage.jpg)
+![signup](screenshots/screenshot-2-sign-up.jpg)
+![login](screenshots/screenshot-3-login.jpg)
+![search](screenshots/screenshot-4.jpg-search-book.jpg)
+![save](screenshots/screenshot-5-save-book.jpg)
+![saved](screenshots/screenshot-6-saved-books.jpg)
+![remove](screenshots/screenshot-7-remove-book.jpg)
 
 ## License
 This application is covered by the [MIT](https://opensource.org/licenses/MIT) license.
