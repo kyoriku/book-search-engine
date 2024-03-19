@@ -8,6 +8,7 @@
 [![Node.JS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/en)
 [![GraphQL](https://img.shields.io/badge/GraphQL-E10098.svg?style=for-the-badge&logo=GraphQL&logoColor=white)](https://graphql.org/)
 [![Apollo GraphQL](https://img.shields.io/badge/Apollo%20GraphQL-311C87.svg?style=for-the-badge&logo=Apollo-GraphQL&logoColor=white)](https://www.apollographql.com/)
+[![Render](https://img.shields.io/badge/Render-46E3B7.svg?style=for-the-badge&logo=Render&logoColor=white)](https://render.com/)
 
 ## Description
 The Book Search Engine is a web application built with the MERN stack (MongoDB, Express.js, React, Node.js) that allows users to search for books using the Google Books API. Users can create accounts, log in, search for books, save them to their account, and remove books from their saved list.
@@ -15,11 +16,15 @@ The Book Search Engine is a web application built with the MERN stack (MongoDB, 
 This project was initially developed with a RESTful API architecture but has been refactored to use GraphQL with Apollo Server for improved performance and flexibility. With GraphQL, users can efficiently fetch and modify data using queries and mutations, providing a more streamlined experience.
 
 ## Table of Contents
+- [Deployment](#deployment)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
 - [Questions](#questions)
+
+## Deployment
+The Book Search Engine is deployed on Render. You can access the live application [here](https://mern-book-search-engine-1asm.onrender.com/).
 
 ## Installation
 To get started with the Book Search Engine, follow these steps:
